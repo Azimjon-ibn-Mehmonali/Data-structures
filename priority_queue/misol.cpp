@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "pqueue.cpp"
+#include "pqueue.hpp"
 
 using namespace std;
 
