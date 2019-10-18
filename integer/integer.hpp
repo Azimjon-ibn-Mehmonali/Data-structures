@@ -5,7 +5,8 @@ using namespace std;
 #define rtoh(s) ((s) + 48)
 
 string add(string, string);
-void noltozala(string&);
+string ayir(string, string);
+void noltozala(string &);
 
 void noltozala(string & s)
 {
@@ -39,6 +40,30 @@ string add(string a, string b)
         {
             a[i] -= 10;
             a[i - 1]++;
+        }
+    }
+    noltozala(a);
+
+    return a;
+}
+
+string ayir(string a, string b)
+{
+    int i, j;
+    i = a.size() - 1;
+    j = b.size() - 1;
+
+    for (;j >= 0; i--, j--)
+        a[i] -= htor(b[j]);
+    
+    i = a.size() - 1;
+
+    for (; i > 0; i--)
+    {
+        if (htor(a[i]) < 0)
+        {
+            a[i] += 10;
+            a[i - 1]--;
         }
     }
     noltozala(a);
